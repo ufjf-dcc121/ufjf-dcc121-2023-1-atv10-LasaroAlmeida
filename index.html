@@ -33,6 +33,14 @@
             <p>&copy; Lásaro Deodoro - 2023</p>
         </footer>
     </header>
+    <script>
+        const form = document.forms.entrada;
+        form.addEventListener("submit", envia);
+        function envia(event) {
+            event.preventDefault();
+            console.log("Formulário Enviado!");
+        }
+    </script>
 </body>
 
 </html>
