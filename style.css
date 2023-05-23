@@ -5,6 +5,10 @@ html{
 main{
     display: flex;
 }
+header {
+    background-color: black;
+    color: white;
+}
 
 header h2{
     margin-bottom: 0.2rem;
