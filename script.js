@@ -9,12 +9,20 @@ atualiza();
 function envia(event) {
     event.preventDefault();
     console.log("Formulário Enviado!");
-    store.estado++;
+    const n = form.valor.value;
+    store.estado.push(n);
     atualiza();
+    form.valor.value = '';
+    form.valor.focus();
 }
 
 function atualiza() {
     const ol = document.querySelector('ol');
-    ol.innerHTML = `<li>${store.estado}</li>`;
+    ol.innerHTML = "";
+    for (let i = 0; i < store.estado.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = store.estado[i];
+        ol.appendChild(li);
+    }
 }
 
