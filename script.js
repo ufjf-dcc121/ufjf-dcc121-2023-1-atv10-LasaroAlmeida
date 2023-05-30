@@ -1,8 +1,8 @@
-import { adicionar, getItems } from "./srore.js";
+import { adicionar, getItems, removeItem } from "./store.js";
 
 const form = document.forms.entrada;
 form.addEventListener("submit", envia);
-
+form.remover.addEventListener("click", remove);
 
 atualiza();
 
@@ -27,3 +27,7 @@ function atualiza() {
     }
 }
 
+function remove() {
+    removeItem();
+    atualiza();
+}
