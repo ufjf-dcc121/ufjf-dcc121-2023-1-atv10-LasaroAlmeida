@@ -9,3 +9,7 @@ export function adicionar(valor) {
 export function getItems() {
     return [...store.estado];
 }
+
+export function removeItem() {
+    store.estado.pop();
+}
