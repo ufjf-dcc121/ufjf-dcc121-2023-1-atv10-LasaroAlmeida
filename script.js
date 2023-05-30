@@ -1,4 +1,4 @@
-import store from "./srore.js";
+import { adicionar, getItems } from "./srore.js";
 
 const form = document.forms.entrada;
 form.addEventListener("submit", envia);
@@ -10,7 +10,7 @@ function envia(event) {
     event.preventDefault();
     console.log("Formulário Enviado!");
     const n = form.valor.value;
-    store.estado.push(n);
+    adicionar(n);
     atualiza();
     form.valor.value = '';
     form.valor.focus();
@@ -19,9 +19,10 @@ function envia(event) {
 function atualiza() {
     const ol = document.querySelector('ol');
     ol.innerHTML = "";
-    for (let i = 0; i < store.estado.length; i++) {
+    const itens = getItems();
+    for (let i = 0; i < itens.length; i++) {
         const li = document.createElement('li');
-        li.textContent = store.estado[i];
+        li.textContent = itens[i];
         ol.appendChild(li);
     }
 }
